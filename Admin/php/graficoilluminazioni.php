@@ -1,4 +1,5 @@
 <script>
+
 var chart = AmCharts.makeChart("chartdiv", {
   "type": "serial",
   "theme": "light",
@@ -86,7 +87,6 @@ Where month(datainv) = 03  AND tipo = '5' ");
 if (mysql_num_rows($quer) > 0) {
     while($row = mysql_fetch_assoc ($quer)) {
         echo   "
-	
 		       
 			  ".$row['cont']."  
 
