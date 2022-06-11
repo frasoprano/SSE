@@ -16,7 +16,12 @@ elseif ($cod !== null){
 		if($cod == $row['codice']){
 			$query = "DELETE FROM team WHERE codice = '$cod'";
 
-			$result = mysqli_query($conn,$query);	
+			//$result = mysqli_query($conn,$query);	
+
+			$stmt = $conn->prepare("DELETE FROM team WHERE codice = ?");
+
+            $stmt->bind_param("s", $cod);
+            $result = $stmt->execute();
 
 			if($query){
 				echo("<br><b><br><p> <center> <font color=black font face='Courier'> Aggiornamento avvenuto correttamente. Ricarica la pagina per aggiornare la tabella.</b></center></p><br><br> ");

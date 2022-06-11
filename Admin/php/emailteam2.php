@@ -17,7 +17,12 @@ if ($id && $team !== null) {
  $query = ("SELECT email_t FROM team WHERE codice = '$team'"); 
 
 
-$result = mysql_query($query);	
+//$result = mysql_query($query);	
+
+$stmt = $conn->prepare("SELECT email_t FROM team WHERE codice = ?");
+
+$stmt->bind_param("s", $team);
+$result = $stmt->execute();
 
 
 if ($result){

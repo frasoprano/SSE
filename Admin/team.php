@@ -283,7 +283,13 @@ if ($email && $nomi && $numeri && $pass !== null) {
 			('$email','$numeri', '$nomi','$pass')";
 
 
-$result = mysql_query($toinsert);	
+//$result = mysql_query($toinsert);	
+$stmt = $conn->prepare("INSERT INTO team
+			(email_t, npersone, nomi, password)
+			VALUES
+			(?,?,?,?)");
+$stmt->bind_param("siss", $email,$numeri,$nomi,$pass);
+$result = $stmt->execute();
 
 if($result){
 	echo("<b><br><p> <center> <font color=black font face='Courier'> Inserimento avvenuto correttamente! Ricarica la pagina per vedere la tabella aggiornata!</p></b></center>");

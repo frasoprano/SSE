@@ -77,7 +77,15 @@ $tipo = (isset($_POST['tipo'])) ? $_POST['tipo'] : null;
             (datainv, orainv, via, descrizione, foto, email, tipo, latitudine, longitudine)
             VALUES
             ('$data','$ora', '$via', '$descr', '$foto', '$email', '$tipo', '$lat', '$long') ";
-        $result = mysqli_query($conn,$sql);
+        //$result = mysqli_query($conn,$sql);
+
+        $stmt = $conn->prepare("INSERT INTO segnalazioni
+            (datainv, orainv, via, descrizione, foto, email, tipo, latitudine, longitudine)
+            VALUES
+            (?,?,?,?,?,?,?,?,?)");
+
+$stmt->bind_param("sssssssss", $data,$ora,$via,$descr,$foto,$email,$tipo,$lat,$long);
+$result = $stmt->execute();
 
  if($result){
 echo "<center> inserimento avvenuto. </center>";

@@ -14,7 +14,11 @@ if ($id && $stato !== null) {
 
  $query = ("UPDATE segnalazioni SET stato = $stato WHERE id = $id");
 
-$result = mysql_query($query);	
+//$result = mysql_query($query);	
+
+$stmt = $conn->prepare("UPDATE segnalazioni SET stato = ? WHERE id = ?");
+$stmt->bind_param("ss", $stato, $id);
+$result = $stmt->execute();
 
 if($result){
 

@@ -262,7 +262,11 @@ if ($idt && $grav !== null) {
     if($id == $row['id']){
       $query = "UPDATE segnalazioni SET gravita = '$grav' WHERE id = '$idt'";
 
-      $result = mysqli_query($conn,$query); 
+      //$result = mysqli_query($conn,$query); 
+
+      $stmt = $conn->prepare("UPDATE segnalazioni SET gravita = ? WHERE id = ?");
+      $stmt->bind_param("ss", $grav, $idt);
+      $result = $stmt->execute();
 
       if($query){
         echo("<br><b><br><p> <center> <font color=black font face='Courier'> Aggiornamento avvenuto correttamente. Ricarica la pagina per aggiornare la tabella.</b></center></p><br><br> ");

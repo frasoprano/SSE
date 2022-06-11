@@ -15,7 +15,12 @@ if (isset($_POST['id'])&& isset($_POST['stato'])) {
 	
 	$query = "SELECT * FROM segnalazioni WHERE id =$idS";
 	
-	$result = mysqli_query($conn,$query);	
+	//$result = mysqli_query($conn,$query);	
+
+	$stmt = $conn->prepare("SELECT * FROM segnalazioni WHERE id = ?");
+
+  $stmt->bind_param("s", $idS);
+  $result = $stmt->execute();
 	
 	if($result){
 		//da ente a team
