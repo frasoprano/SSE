@@ -28,10 +28,9 @@ Where month(datainv) = 01  AND tipo = '5' ");
 
 if (mysql_num_rows($quer) > 0) {
     while($row = mysql_fetch_assoc ($quer)) {
-      $result = $row['cont'];
-      
-      if(is_integer($result)){
-        echo " ".$row['cont']." ";
+      if(is_integer($row['cont'])){
+        $result = (int) $row['cont'];
+        echo " ".$result." ";
       }else{
         "Possibile Cross-Site:Persistent";
       }
@@ -56,16 +55,15 @@ FROM segnalazioni
 Where month(datainv) = 02  AND tipo = '5'");
 
 if (mysql_num_rows($quer) > 0) {
-    while($row = mysql_fetch_assoc ($quer)) {
-      $result = $row['cont'];
-      
-      if(is_integer($result)){
-        echo " ".$row['cont']." ";
-      }else{
-        "Possibile Cross-Site:Persistent";
-      }
-
-     }}
+  while($row = mysql_fetch_assoc ($quer)) {
+    if(is_integer($row['cont'])){
+      $result = (int) $row['cont'];
+      echo " ".$result." ";
+    }else{
+      "Possibile Cross-Site:Persistent";
+    }
+    
+   }}
 	?> ,
 	
     "value2": 15,
@@ -85,15 +83,15 @@ FROM segnalazioni
 Where month(datainv) = 03  AND tipo = '5' ");
 
 if (mysql_num_rows($quer) > 0) {
-    while($row = mysql_fetch_assoc ($quer)) {
-      $result = $row['cont'];
-      
-      if(is_integer($result)){
-        echo " ".$row['cont']." ";
-      }else{
-        "Possibile Cross-Site:Persistent";
-      } 
-    }}
+  while($row = mysql_fetch_assoc ($quer)) {
+    if(is_integer($row['cont'])){
+      $result = (int) $row['cont'];
+      echo " ".$result." ";
+    }else{
+      "Possibile Cross-Site:Persistent";
+    }
+    
+   }}
 	?> ,
     "value2": 15,
     "value3": 0,
@@ -112,14 +110,15 @@ FROM segnalazioni
 Where month(datainv) = 04  AND tipo = '5' ");
 
 if (mysql_num_rows($quer) > 0) {
-    while($row = mysql_fetch_assoc ($quer)) {
-      $result = $row['cont'];
-      
-      if(is_integer($result)){
-        echo " ".$row['cont']." ";
-      }else{
-        "Possibile Cross-Site:Persistent";
-      } }}
+  while($row = mysql_fetch_assoc ($quer)) {
+    if(is_integer($row['cont'])){
+      $result = (int) $row['cont'];
+      echo " ".$result." ";
+    }else{
+      "Possibile Cross-Site:Persistent";
+    }
+    
+   }}
 	?> ,
     "value2": 15,
     "value3": 0,
@@ -138,15 +137,15 @@ FROM segnalazioni
 Where month(datainv) = 05  AND tipo = '5' ");
 
 if (mysql_num_rows($quer) > 0) {
-    while($row = mysql_fetch_assoc ($quer)) {
-      $result = $row['cont'];
-      
-      if(is_integer($result)){
-        echo " ".$row['cont']." ";
-      }else{
-        "Possibile Cross-Site:Persistent";
-      } 
-    }}
+  while($row = mysql_fetch_assoc ($quer)) {
+    if(is_integer($row['cont'])){
+      $result = (int) $row['cont'];
+      echo " ".$result." ";
+    }else{
+      "Possibile Cross-Site:Persistent";
+    }
+    
+   }}
 	?> ,
     "value2": 15,
     "value3": 0,
@@ -165,14 +164,14 @@ FROM segnalazioni
 Where month(datainv) = 06  AND tipo = '5' ");
 
 if (mysql_num_rows($quer) > 0) {
-    while($row = mysql_fetch_assoc ($quer)) {
-      $result = $row['cont'];
-      
-      if(is_integer($result)){
-        echo " ".$row['cont']." ";
-      }else{
-        "Possibile Cross-Site:Persistent";
-      }
+  while($row = mysql_fetch_assoc ($quer)) {
+    if(is_integer($row['cont'])){
+      $result = (int) $row['cont'];
+      echo " ".$result." ";
+    }else{
+      "Possibile Cross-Site:Persistent";
+    }
+    
    }}
 	?> ,
     "value2": 15,
@@ -192,15 +191,15 @@ FROM segnalazioni
 Where month(datainv) = 07  AND tipo = '5' ");
 
 if (mysql_num_rows($quer) > 0) {
-    while($row = mysql_fetch_assoc ($quer)) {
-      $result = $row['cont'];
-      
-      if(is_integer($result)){
-        echo " ".$row['cont']." ";
-      }else{
-        "Possibile Cross-Site:Persistent";
-      }
-     }}
+  while($row = mysql_fetch_assoc ($quer)) {
+    if(is_integer($row['cont'])){
+      $result = (int) $row['cont'];
+      echo " ".$result." ";
+    }else{
+      "Possibile Cross-Site:Persistent";
+    }
+    
+   }}
 	?> ,
     "value2": 15,
     "value3": 0,
@@ -219,15 +218,15 @@ FROM segnalazioni
 Where month(datainv) = 08  AND tipo = '5' ");
 
 if (mysql_num_rows($quer) > 0) {
-    while($row = mysql_fetch_assoc ($quer)) {
-      $result = $row['cont'];
-      
-      if(is_integer($result)){
-        echo " ".$row['cont']." ";
-      }else{
-        "Possibile Cross-Site:Persistent";
-      } 
-    }}
+  while($row = mysql_fetch_assoc ($quer)) {
+    if(is_integer($row['cont'])){
+      $result = (int) $row['cont'];
+      echo " ".$result." ";
+    }else{
+      "Possibile Cross-Site:Persistent";
+    }
+    
+   }}
 	?> ,
     "value2": 15,
     "value3": 0,
@@ -246,15 +245,15 @@ FROM segnalazioni
 Where month(datainv) = 09  AND tipo = '5' ");
 
 if (mysql_num_rows($quer) > 0) {
-    while($row = mysql_fetch_assoc ($quer)) {
-      $result = $row['cont'];
-      
-      if(is_integer($result)){
-        echo " ".$row['cont']." ";
-      }else{
-        "Possibile Cross-Site:Persistent";
-      }
-     }}
+  while($row = mysql_fetch_assoc ($quer)) {
+    if(is_integer($row['cont'])){
+      $result = (int) $row['cont'];
+      echo " ".$result." ";
+    }else{
+      "Possibile Cross-Site:Persistent";
+    }
+    
+   }}
 	?> ,
     "value2": 15,
     "value3": 0,
@@ -273,13 +272,15 @@ FROM segnalazioni
 Where month(datainv) = 10  AND tipo = '5' ");
 
 if (mysql_num_rows($quer) > 0) {
-    while($row = mysql_fetch_assoc ($quer)) {
-        echo   "
-	
-		       
-			  ".$row['cont']."  
-
-	"; }}
+  while($row = mysql_fetch_assoc ($quer)) {
+    if(is_integer($row['cont'])){
+      $result = (int) $row['cont'];
+      echo " ".$result." ";
+    }else{
+      "Possibile Cross-Site:Persistent";
+    }
+    
+   }}
 	?> ,
     "value2": 15,
     "value3": 0,
@@ -298,15 +299,15 @@ FROM segnalazioni
 Where month(datainv) = 11 AND tipo = '5' ");
 
 if (mysql_num_rows($quer) > 0) {
-    while($row = mysql_fetch_assoc ($quer)) {
-      $result = $row['cont'];
-      
-      if(is_integer($result)){
-        echo " ".$row['cont']." ";
-      }else{
-        "Possibile Cross-Site:Persistent";
-      }
-     }}
+  while($row = mysql_fetch_assoc ($quer)) {
+    if(is_integer($row['cont'])){
+      $result = (int) $row['cont'];
+      echo " ".$result." ";
+    }else{
+      "Possibile Cross-Site:Persistent";
+    }
+    
+   }}
 	?> ,
     "value2": 15,
     "value3": 0,
@@ -325,15 +326,15 @@ FROM segnalazioni
 Where month(datainv) = 12  AND tipo = '5' ");
 
 if (mysql_num_rows($quer) > 0) {
-    while($row = mysql_fetch_assoc ($quer)) {
-      $result = $row['cont'];
-      
-      if(is_integer($result)){
-        echo " ".$row['cont']." ";
-      }else{
-        "Possibile Cross-Site:Persistent";
-      }
-    }}
+  while($row = mysql_fetch_assoc ($quer)) {
+    if(is_integer($row['cont'])){
+      $result = (int) $row['cont'];
+      echo " ".$result." ";
+    }else{
+      "Possibile Cross-Site:Persistent";
+    }
+    
+   }}
 	?> ,
     "value2": 15,
     "value3": 0,
