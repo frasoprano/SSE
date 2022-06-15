@@ -3,9 +3,10 @@
 	if(isset($_POST['email']) && isset($_POST['password'])){
 		$email = $_POST['email'];
 		$password = $_POST['password'];
+		$passwordHashed = password_hash($password, PASSWORD_DEFAULT);
 		if($email == "civicsense18@gmail.com")
 		{
-			if($password == "admin")
+			if(password_verify($password, $passwordHashed))
 			{
 				echo 'Accesso consentito alla sezione riservata';
 			}

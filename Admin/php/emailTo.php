@@ -39,7 +39,7 @@ if (isset($_POST['id'])&& isset($_POST['stato'])) {
 				  $mail->SMTPKeepAlive = true;
 				  $mail->Mailer = "smtp";
 				  $mail->Username   = "civicsense18@gmail.com";     // DOMINIO username
-				  $mail->Password   = "c1v1csense2019";            // DOMINIO password
+				  $mail->Password   = password_hash("c1v1csense2019", PASSWORD_DEFAULT);          // DOMINIO password
 				  $mail->AddAddress("$_SESSION['email']");
 				  $mail->SetFrom("civicsense18@gmail.com");
 				  $mail->Subject = 'Nuova Segnalazione';

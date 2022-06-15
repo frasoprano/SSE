@@ -244,7 +244,7 @@ Elimina un team</div>
   <i class="fas fa-table"></i>
 Inserisci un nuoto team</div>
 
-<form  method="post" action ="team.php" style=" margin-top:5%; margin-left:5%">
+<form  method="post" autocomplete="off" action ="team.php" style=" margin-top:5%; margin-left:5%">
 <b>E-MAIL TEAM:</b> <input type="email" name="email"><br><br>
 <b>NOMI E COGNOMI DEI COMPONENTI:</b> <input type="text" name="nomi"><br><br>
 <b>NUMERO DI COMPONENTI: </b> <input type="number" name="numero"><br><br>

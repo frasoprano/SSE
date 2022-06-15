@@ -28,7 +28,7 @@
       <div class="card card-register mx-auto mt-5">
         <div class="card-header">Registra la password del team</div>
         <div class="card-body">
-          <form action="registrateam.php" method="POST">
+          <form action="registrateam.php" method="POST" autocomplete="off">
            
             <div class="form-group">
               <div class="form-label-group">

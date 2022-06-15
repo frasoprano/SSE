@@ -28,7 +28,7 @@
       <div class="card card-login mx-auto mt-5">
         <div class="card-header">Login</div>
         <div class="card-body">
-  <form action="#" method="POST">
+  <form action="#" method="POST" autocomplete="off">
             <div class="form-group">
               <div class="form-label-group">
                 <input type="email" name="email" id="inputEmail" class="form-control" placeholder="Email" required="required" autofocus="autofocus">
@@ -71,9 +71,10 @@
   if(isset($_POST['email']) && isset($_POST['password'])){
     $email = $_POST['email'];
     $password = $_POST['password'];
+    $passwordHashed = password_hash($password, PASSWORD_DEFAULT);
     if($email == "civicsense2019@gmail.com")
     {
-      if($password == "admin")
+      if(password_verify($password, $passwordHashed))
       {
         echo 'Accesso consentito alla sezione riservata';
         echo '<script>window.location.href = "index.php";</script>';
