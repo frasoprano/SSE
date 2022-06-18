@@ -163,14 +163,16 @@
         $result = mysqli_query($conn,$sql);
         if($result){
           while($row=mysqli_fetch_assoc($result)){
-            echo "
-            var location = new google.maps.LatLng(".$row['latitudine'].",".$row['longitudine'].");
-            var marker = new google.maps.Marker({
-              map: map,
-              position: location
-           
-            }); " ;
-          }
+            if(is_integer($row['cont'])) {
+            $validated = (int) $row['cont'];
+              echo "
+              var location = new google.maps.LatLng(".$validated['latitudine'].",".$validated['longitudine'].");
+              var marker = new google.maps.Marker({
+                map: map,
+                position: location
+             
+              }); " ;
+            }}
           mysqli_close($conn);
         }
       ?>
