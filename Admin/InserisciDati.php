@@ -4,7 +4,7 @@
 	$upload_path = 'jpeg/';
 	
 	if ($_SERVER['REQUEST_METHOD']=='POST') {
-		$file_path = $upload_path . $_FILES['image']['name'];
+		$file_path = realpath($upload_path . $_FILES['image']['name']);
 		$img_name = $_FILES['image']['name'];
 		$email = $_POST['email'];
 		$tipo = $_POST['tipo'];
@@ -28,6 +28,12 @@
 		
 
 		try{
+
+			if(!($upload_path === "jpeg/" && strpos($upload_path,$file_path))){
+				echo "Error path violation";
+				exit;
+			}
+
 			move_uploaded_file($_FILES['image']['tmp_name'],$file_path);
 			$sql = "INSERT INTO `segnalazioni`(`datainv`, `orainv`, `via`, `descrizione`, `foto`, `email`,`tipo`,`latitudine`,`longitudine`) 
 			VALUES (CURRENT_DATE,CURRENT_TIME,'".$via."','".$descrizione."','{$img_name}','".$email."','".$tipo."',".$lat.",".$lng.")";
