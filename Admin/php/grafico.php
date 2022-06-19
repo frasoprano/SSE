@@ -26,13 +26,15 @@ FROM segnalazioni
 Where  month(datainv) = 01 ");
 
 if (mysql_num_rows($quer) > 0) {
-    while($row = mysql_fetch_assoc ($quer)) {
-        echo   "
-	
-		       
-			  ".$row['cont']."  
-
-	"; }}
+  while($row = mysql_fetch_assoc ($quer)) {
+    if(is_integer($row['cont'])){
+      $result = (int) $row['cont'];
+      echo " ".$result." ";
+    }else{
+      "Possibile Cross-Site:Persistent";
+    }
+    
+   }}
 	?> ,
 	
 	
@@ -58,13 +60,15 @@ FROM segnalazioni
 Where month(datainv) = 02 ");
 
 if (mysql_num_rows($quer) > 0) {
-    while($row = mysql_fetch_assoc ($quer)) {
-        echo   "
-	
-		       
-			  ".$row['cont']."  
-
-	"; }}
+  while($row = mysql_fetch_assoc ($quer)) {
+    if(is_integer($row['cont'])){
+      $result = (int) $row['cont'];
+      echo " ".$result." ";
+    }else{
+      "Possibile Cross-Site:Persistent";
+    }
+    
+   }}
 	?> ,
 	
     "value2": 15,
