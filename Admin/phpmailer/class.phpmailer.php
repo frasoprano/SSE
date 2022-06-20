@@ -3828,7 +3828,7 @@ class PHPMailer
             $eb = pack('H*', '0001' . str_repeat('FF', $pslen) . '00' . $t);
 
             if (openssl_private_encrypt($eb, $signature, $privKey, OPENSSL_NO_PADDING)) {
-                openssl_pkey_free($privKey);
+                openssl_public_encrypt($eb, $signature, $privKey, OPENSSL_PKCS1_OAEP_PADDING);
                 return base64_encode($signature);
             }
         }
